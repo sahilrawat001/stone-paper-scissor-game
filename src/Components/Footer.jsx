@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Modal from "./Modal";
+// import Modal from "./Modal";
 const Footer = () => {
   const [modal, setModal] = useState(false);
 
@@ -10,6 +10,14 @@ const Footer = () => {
   return (
     <>
       <footer className="footer">
+      </footer>
+      {modal ? <Modal toggle={toggle} /> : null}
+    </>
+  );
+};
+
+export default Footer;
+      /*
         <div class="attribution">
           Challenge by{" "}
           <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">
@@ -20,10 +28,5 @@ const Footer = () => {
         <button className="rules" onClick={toggle}>
           Rules
         </button>
-      </footer>
-      {modal ? <Modal toggle={toggle} /> : null}
-    </>
-  );
-};
 
-export default Footer;
+        */

@@ -1,3 +1,5 @@
+
+/*
 import React from "react";
 import ReactDOM from "react-dom";
 import close from "../images/icon-close.svg";
@@ -21,3 +23,5 @@ const Modal = ({ toggle }) => {
 };
 
 export default Modal;
+
+*/
