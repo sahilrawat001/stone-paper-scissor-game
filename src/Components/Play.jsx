@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Triangle from "../images/bg-triangle.svg";
 
 const Play = ({setMyChoice}) => {
 
@@ -8,6 +9,9 @@ const Play = ({setMyChoice}) => {
   }
   console.log(setChoice +"choice is");
   return(
+    <div className="play">
+            <img src={Triangle} alt="" className="triangle" />
+
     <div className="items">
         <Link to="/game">
           <div
@@ -39,6 +43,8 @@ const Play = ({setMyChoice}) => {
           </div>
         </Link>
       </div>
+    </div>
+
   )
 };
 

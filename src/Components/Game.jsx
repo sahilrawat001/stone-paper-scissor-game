@@ -54,15 +54,53 @@ useEffect(() => {
 
 
   return( <div className='game' > 
-my choice : {myChoice } <br/>
-house choice : { house }<br/>
-Result :
- {playerWin=="win"&& <h2>winner is here</h2>  }
- {playerWin=="draw"&& <h2>none is here</h2>  }
- {playerWin=="lose"&& <h2>losser is here</h2>  }
- <Link to='/'   >
-   Play Again
- </Link>
+    <div className="game__you">
+        <span className="text">You Picked</span>
+        <div
+          className={`icon icon--${myChoice} ${
+            playerWin == "win" ? `icon icon--${myChoice}--winner` : ""
+          }`}
+        ></div>
+        {playerWin == "win" && (
+        <div className="game__play">
+          <span className="text">You Win</span>
+          <Link to="/" className="play-again" onClick={() => setHouse()}>
+            Play Again
+          </Link>
+        </div>
+   )}
+   
+   {playerWin == "lose" && (
+        <div className="game__play">
+          <span className="text">You Lose</span>
+          <Link to="/" className="play-again" onClick={() => setHouse()}>
+            Play Again
+          </Link>
+        </div>
+      )}
+      {playerWin == "draw" && (
+        <div className="game__play">
+          <span className="text">Draw</span>
+          <Link to="/" className="play-again" onClick={() => setHouse()}>
+            Play Again
+          </Link>
+        </div>
+      )}    </div> 
+
+ <div className="game__house">
+        <span className="text">The House Picked</span>
+        {counter == 0 ? (
+          <div
+            className={`icon icon--${house} ${
+              playerWin == "lose" ? `icon icon--${house}--winner` : ""
+            }`}
+          ></div>
+        ) : (
+          <div className="counter">{counter}</div>
+        )}
+      </div>
+   
+ 
   </div>)
 
 };
